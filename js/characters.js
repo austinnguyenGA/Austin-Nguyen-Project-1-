@@ -51,7 +51,7 @@ class Kakashi extends Player {
 
 class Gojo extends Player {
   constructor() {
-    super("Gojo", 100, [10, 15, 20], 10, {
+    super("Gojo", 100, [10, 15, 20], "limitless", {
       attack1: "Black Flash",
       attack2: "Lapse Blue",
       attack3: "Hollow Purple",
@@ -61,39 +61,62 @@ class Gojo extends Player {
   }
 }
 
+class Enemy {
+  constructor(name, health, damage, defense) {
+      this.name = name,
+      this.health = health,
+      this.damage = damage,
+      this.defense = defense
+  }
+}
+
+class Damon extends Enemy {
+  constructor() {
+    super("Deamon", 20, 5, 5)
+  }
+}
+
+class Nomu extends Enemy {
+  constructor() {
+    super("Nomu", 20, 5, 5)
+  }
+}
+
+class Akatsuki extends Enemy {
+  constructor() {
+    super("Akatsuki", 40, 10, 10)
+  }
+}
+
+class Curse extends Enemy {
+  constructor() {
+    super("Curse", 30, 7, 7)
+  }
+}
+
 const tanjiro = new Tanjiro()
 const deku = new Deku()
 const kakashi = new Kakashi()
 const gojo = new Gojo()
-// console.log(tanjiro)
-// console.log(deku)
-// console.log(kakashi)
-// console.log(gojo)
+const damon = new Damon()
+const nomu = new Nomu()
+const akatsuki = new Akatsuki()
+const curse = new Curse()
 
+console.log(tanjiro)
+console.log(deku)
+console.log(kakashi)
+console.log(gojo)
+console.log(damon)
+console.log(nomu)
+console.log(akatsuki)
+console.log(curse)
 
 
 const characterSelection = {
   player: " ",
-
 }
 
-// const charSelect = document.querySelector(".characterSelection")
-// charSelect.addEventListener('click', (event) => {
-//   if (event.target.id === "Tanjiro") {
-//     characterSelection.player = tanjiro
-//   } else if
-//     (event.target.id === "Deku") {
-//       characterSelection.player = deku
-//     } else if
-//       (event.target.id === "Kakashi") {
-//         characterSelection.player = kakashi
-//       } else if
-//         (event.target.id === "Gojo") {
-//           characterSelection.player = gojo
-//         }
-//         confirm(`Are you sure that you want to select ${characterSelection.player " "}?`)
-//         return characterSelection.player
-//   })
 function confirmSelect() {
   const charSelect = document.querySelector(".characterSelection")
   charSelect.addEventListener('click', (event) => {
@@ -110,14 +133,23 @@ function confirmSelect() {
           characterSelection.player = gojo
     }
       let choice = confirm("Do you want to play with this character?")
-      if choice = true {
-
+      if (choice = false) {
+        confirmSelect()
       } else {
-
+        // characterSelection.appendChild(charSelect)
+        // return (`Player you have chosen to play as ${charSelect}`)
+        startGame()
       }
       })
-  }
+}
 
-  // console.log(characterSelection)
+function startGame() {
+  const start = document.querySelector(".startGame")
+  start.addEventListener('click', (event) => {
+    alert("Player Prepare for combat!")
+  })
+}
+
+
 confirmSelect()
-console.log(characterSelection.player)
+//console.log(characterSelection.player)
