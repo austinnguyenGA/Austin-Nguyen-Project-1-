@@ -1,4 +1,4 @@
-#Background1{
+/* #Background1{
   width: 800px;
   height: 500px;
   border: 1px solid black;
@@ -7,7 +7,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .characterSelection{
   width: 30px;
