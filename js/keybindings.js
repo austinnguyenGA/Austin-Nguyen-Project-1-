@@ -2,8 +2,7 @@ const playerSprite1 = new Image()
 playerSprite1.src = "image/tanjiro-2.png"
 const background = new Image()
 background.src = "image/dungeonbackground.png"
-const enemey1 = new Image()
-enemy1.src = "image/zenitsu-2.png"
+
 
 
 
