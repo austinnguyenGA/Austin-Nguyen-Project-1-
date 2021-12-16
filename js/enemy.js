@@ -1,49 +1,50 @@
 const images = {}
 images.enemy1 = new Image()
-images.enemy1.src = "image/zenitsu.png"
+images.enemy1.src = "image/satoru_gojo.png"
 console.log("check")
 
 const enemyActions1 = ['up', 'top', 'right', 'right', 'down right', 'down']
-const numberOfEnemies1 = 20
+const numberOfEnemies1 = 10
 const characters1 = [] 
 class enemyOne {
     constructor(){
-        this.width = 40
-        this.height = 60
-        this.frameX = 12
+        this.width = 27
+        this.height = 45
+        this.frameX = .4
+        this.frameY = .765
         this.x = Math.random() * canvas.width - this.width
         this.y = Math.random() * canvas.height -this.height
         this.speed = (Math.random() * 2) + 3
         this.minFrame = 0 
         this.action = enemyActions1[Math.floor(Math.random() * enemyActions1.length)];
         if (this.action === 'up') {
-            this.frameY = 0; 
-            this.minFrame = 4; // 4: 12?
-            this.maxFrame = 15; // 15: 15? 
+            this.frameY = .765; 
+            this.minFrame = 0; // 4: 12?
+            this.maxFrame = 0; // 15: 15? 
         }
         else if (this.action === 'top right') {
-            this.frameY = 0; // 1 : 12 ?
+            this.frameY = .765; // 1 : 12 ?
             this.minFrame = 0; // 4 : 12?
             this.maxFrame = 0; // 14 : 15?
         }
         else if (this.action === 'right') {
-            this.frameY = 0; // 3 : 12?
+            this.frameY = .765; // 3 : 12?
             this.minFrame = 0; // 3 : 12?
             this.maxFrame = 0; // 13 : 15?
         }
         else if (this.action === 'down right') {
-            this.frameY = 0; // 4 : 12?
+            this.frameY = .765; // 4 : 12?
             this.minFrame = 0; // 4 : 12?
             this.maxFrame = 0; // 15 : 15?
         } 
         else if (this.action === 'down') {
             this.minFrame = 0;
-            this.frameY = 0; //6 : 12?
+            this.frameY = .765; //6 : 12?
             this.maxFrame = 0; //12 : 15?
         }
         else if (this.action === 'jump') {
             this.minFrame = 0;
-            this.frameY = 0; // 7 : 12?
+            this.frameY = .765; // 7 : 12?
             this.maxFrame = 0; // 9 : 15?
         }
 

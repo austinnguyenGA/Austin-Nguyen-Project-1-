@@ -153,3 +153,7 @@ function startGame() {
 
 confirmSelect()
 //console.log(characterSelection.player)
+
+
+
+/// Current functionality for this will come when I am able to come back and work on this. For now currently the classes for characters are place holders for future edits. 

@@ -1,7 +1,7 @@
 const playerSprite1 = new Image()
 playerSprite1.src = "image/tanjiro-2.png"
-const background = new Image()
-background.src = "image/dungeonbackground.png"
+// const background = new Image()
+// background.src = "image/dungeonbackground.png"
 
 
 
@@ -147,3 +147,5 @@ window.addEventListener("keyup", function(e){
         player.frameX = 0
     }
 })
+
+
