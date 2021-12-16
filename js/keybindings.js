@@ -1,15 +1,12 @@
 const playerSprite1 = new Image()
 playerSprite1.src = "image/tanjiro-2.png"
-// const background = new Image()
-// background.src = "image/dungeonbackground.png"
+const background = new Image()
+background.src = "image/dungeonbackground.png"
 
-
-
-
-const canvas = document.getElementById('Background1')
-const  ctx = canvas.getContext('2d')
-canvas.width = 800
-canvas.height = 500
+// const canvas = document.getElementById('Background1')
+// const  ctx = canvas.getContext('2d')
+// canvas.width = 800
+// canvas.height = 500
 
 const player = {
     x: 200,
@@ -37,47 +34,47 @@ function handlePlayerFrame(){
 }
 
 function handlePlayerAttackFrame1(){
-    let counter = 0;
+    let counter = 0
     const playerInterval = setInterval(()=> {
-        player.frameX++;
-        counter++;
+        player.frameX++
+        counter++
         if (counter === 15) {
             clearInterval(playerInterval)
         } 
-    }, 100);
+    }, 100)
 }
 
 function handlePlayerAttackFrame2(){
-    let counter = 0;
+    let counter = 0
     const playerInterval = setInterval(()=> {
-        player.frameX++;
-        counter++;
+        player.frameX++
+        counter++
         if (counter === 9) {
             clearInterval(playerInterval)
         } 
-    }, 200);
+    }, 200)
 }
 
 function handlePlayerAttackFrame3(){
-    let counter = 0;
+    let counter = 0
     const playerInterval = setInterval(()=> {
-        player.frameX++;
-        counter++;
+        player.frameX++
+        counter++
         if (counter === 7) {
             clearInterval(playerInterval)
         } 
-    }, 250);
+    }, 250)
 }
 
 function handlePlayerAttackFrame4(){
-    let counter = 0;
+    let counter = 0
     const playerInterval = setInterval(()=> {
-        player.frameX++;
-        counter++;
+        player.frameX++
+        counter++
         if (counter === 12) {
             clearInterval(playerInterval)
         } 
-    }, 200);
+    }, 200)
 }
 
 function movePlayer(e){
@@ -128,12 +125,16 @@ function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
     drawSprite(playerSprite1, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x , player.y, player.width, player.height)
+    for (i = 0; i < characters1.length; i++ ){
+        characters1[i].draw()
+        characters1[i].update()
+    }
     requestAnimationFrame(animate)
 }
 animate()
 
 window.addEventListener("keydown", function(e){
-    console.log(e.key);
+    console.log(e.key)
     movePlayer(e)
     attack(e)
     player.moving = true
