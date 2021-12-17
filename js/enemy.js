@@ -9,7 +9,7 @@ canvas.width = 800
 canvas.height = 500
 
 const enemyActions1 = ['up', 'top', 'right', 'right', 'down right', 'down']
-const numberOfEnemies1 = 10
+const numberOfEnemies1 = 20
 const characters1 = [] 
 class enemyOne {
     constructor(){
@@ -17,8 +17,8 @@ class enemyOne {
         this.height = 45
         this.frameX = .4
         this.frameY = .765
-        this.x = Math.random() * canvas.width - this.width
-        this.y = Math.random() * canvas.height -this.height
+        this.x =  Math.random() * canvas.width - this.width
+        this.y =  Math.random() * canvas.height -this.height
         this.speed = .5 
         this.minFrame = 0 
         this.action = enemyActions1[Math.floor(Math.random() * enemyActions1.length)]
@@ -56,7 +56,7 @@ class enemyOne {
     }
     draw(){
         drawSprite(images.enemy1, this.width * this.frameX, this.height * this.frameY, this.width, this.height, this.x, this.y, this.width * 1.5, this.height * 1.5)
-        
+    
         if (this.frameX < this.maxFrame) this.frameX++
         else this.frameX = this.minFrame
     }
@@ -138,4 +138,4 @@ function drawSprite1(img, sX, sY, sW, sH, dX, dY, dW, dH){
 //     canvas.width = window.innerWidth
 // })
     
-console.log(characters1[0])
+console.log(characters1)

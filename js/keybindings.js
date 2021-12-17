@@ -15,7 +15,7 @@ const player = {
     height: 60,
     frameX: 0,
     frameY: .5,
-    speed: 12,
+    speed: 15,
     moving: false,
 }
 
@@ -127,8 +127,14 @@ function animate(){
     drawSprite(playerSprite1, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x , player.y, player.width, player.height)
     for (i = 0; i < characters1.length; i++ ){
         characters1[i].draw()
-        characters1[i].update()
+        characters1[i].update() 
     }
+    // for (let i = 0; i < characters1.length; i++){
+    //     if (detectCollisions(player, characters1[i])){
+    //         characters1.splice(i, 1);
+    //     }
+    // }
+    //detectCollisions()
     requestAnimationFrame(animate)
 }
 animate()
@@ -140,6 +146,12 @@ window.addEventListener("keydown", function(e){
     player.moving = true
 })
 
+window.addEventListener("keydown", function(e){
+    if (e.key === "e" || e.key === "r" || e.key === "t" || e.key === "q"){
+        detectCollisions();
+    } 
+})
+
 
 window.addEventListener("keyup", function(e){
     if (e.key === "a" || e.key === "s" || e.key === "d" || e.key === "w"){
@@ -149,4 +161,28 @@ window.addEventListener("keyup", function(e){
     }
 })
 
+function detectCollisions() {
+    for (let i = 0; i < characters1.length; i++){
+        if (characters1[i].x > player.x && characters1[i].x < player.x + player.width && characters1[i].y > player.y && characters1[i].y < player.y + player.height) {
+            console.log("collision")
+            characters1.splice(i, 1);
 
+        }
+    }
+ }
+
+// function draw() {
+// ctx.draw
+// var x = canvas.width / 2 
+// var y = canvas.height / 2 
+// var r = 45 
+// }
+
+// draw()
+
+// function collisions(player, characters1) {
+//     return ( player.x > characters1.x + characters1.width &&
+//             player.x + player.width < characters1.x &&
+//             player.y > characters1.y + characters1.height &&
+//             player.y + player.height < characters1.y)
+// }
