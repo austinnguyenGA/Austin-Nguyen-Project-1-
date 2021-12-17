@@ -9,7 +9,7 @@ canvas.width = 800
 canvas.height = 500
 
 const enemyActions1 = ['up', 'top', 'right', 'right', 'down right', 'down']
-const numberOfEnemies1 = 100
+const numberOfEnemies1 = 11
 const characters1 = [] 
 class enemyOne {
     constructor(){

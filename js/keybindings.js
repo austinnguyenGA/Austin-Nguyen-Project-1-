@@ -3,7 +3,7 @@ playerSprite1.src = "image/tanjiro-2.png"
 const background = new Image()
 background.src = "image/dungeonbackground.png"
 const healthbar = document.querySelector('#healthnbr')
-const killbar = document.querySelector('#killCounter')
+// const killbar = document.querySelector('#killCounter')
 // const canvas = document.getElementById('Background1')
 // const  ctx = canvas.getContext('2d')
 // canvas.width = 800
@@ -174,8 +174,11 @@ function detectCollisions() {
             healthbar.innerText = `Health: ${player.health}`
             if (player.health < 1) {
                 alert('Game Over')
-            player.kills += 1 
-            killbar.innerHTML = `Kills: ${player.kills}`
+            //player.kills += 1 
+            //killbar.innerHTML = `Kills: ${player.kills}`
+            // if (characters1.length < 1) {
+            //     alert("You've Won!")
+            //     }
             }
         }
     }
