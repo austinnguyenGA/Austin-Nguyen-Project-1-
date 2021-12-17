@@ -3,11 +3,12 @@ playerSprite1.src = "image/tanjiro-2.png"
 const background = new Image()
 background.src = "image/dungeonbackground.png"
 const healthbar = document.querySelector('#healthnbr')
+const killbar = document.querySelector('#killCounter')
 // const canvas = document.getElementById('Background1')
 // const  ctx = canvas.getContext('2d')
 // canvas.width = 800
 // canvas.height = 500
-
+alert("How to Play: You are Tanjiro it is you job to kill all the Gojo's! Use keys WASD to move and Q, E, R, T to attack! You lose if your health equals 0. Be sure to heal yourself with the heal button.")
 
 const player = {
     x: 200,
@@ -18,7 +19,8 @@ const player = {
     frameY: .5,
     speed: 15,
     moving: false,
-    health: 100
+    health: 100,
+    kills: 0
 }
 
 
@@ -168,10 +170,12 @@ function detectCollisions() {
         if (characters1[i].x > player.x && characters1[i].x < player.x + player.width && characters1[i].y > player.y && characters1[i].y < player.y + player.height) {
             console.log("collision")
             characters1.splice(i, 1);
-            player.health -= 100
-            healthbar.innerHTML = `Health: ${player.health}`
-            if (healthbar === 'Health: 0') {
+            player.health -= 10
+            healthbar.innerText = `Health: ${player.health}`
+            if (player.health < 1) {
                 alert('Game Over')
+            player.kills += 1 
+            killbar.innerHTML = `Kills: ${player.kills}`
             }
         }
     }
@@ -181,20 +185,19 @@ function detectCollisions() {
     const restorehlth = document.querySelector('#health')
     restorehlth.addEventListener('click', (event) => {
         player.health += 10
-        healthbar.innerHTML = `Health: ${player.health}`
+        healthbar.innerText = `Health: ${player.health}`
     })
  }
 
- function alerts() {
-     if (healthbar === 0) {
-        console.log("You Lost") 
-        alert("Game Over")
-     }
- }
- 
- Heal()
+//  function notify() {
+//      if (healthbar.innerHTML === `Health: 0`) {
+//         console.log("You Lost") 
+//         alert("Game Over")
+//      }
+//  }
+
+Heal()
 animate()
-alerts()
 
 //////////////////////////////////////////////// Other attmepts at different methods////////////////////////////////////
 // function draw() {
