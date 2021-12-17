@@ -2,11 +2,12 @@ const playerSprite1 = new Image()
 playerSprite1.src = "image/tanjiro-2.png"
 const background = new Image()
 background.src = "image/dungeonbackground.png"
-
+const healthbar = document.querySelector('#healthnbr')
 // const canvas = document.getElementById('Background1')
 // const  ctx = canvas.getContext('2d')
 // canvas.width = 800
 // canvas.height = 500
+
 
 const player = {
     x: 200,
@@ -17,6 +18,7 @@ const player = {
     frameY: .5,
     speed: 15,
     moving: false,
+    health: 100
 }
 
 
@@ -78,7 +80,7 @@ function handlePlayerAttackFrame4(){
 }
 
 function movePlayer(e){
-    if (e.key === "w" && player.y > 100){
+    if (e.key === "w" && player.y > -15){
         player.y -= player.speed
         player.frameY = 2.89
         handlePlayerFrame()
@@ -125,7 +127,7 @@ function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
     drawSprite(playerSprite1, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x , player.y, player.width, player.height)
-    for (i = 0; i < characters1.length; i++ ){
+    for (i = 0; i < characters1.length; i++){
         characters1[i].draw()
         characters1[i].update() 
     }
@@ -137,7 +139,7 @@ function animate(){
     //detectCollisions()
     requestAnimationFrame(animate)
 }
-animate()
+
 
 window.addEventListener("keydown", function(e){
     console.log(e.key)
@@ -166,11 +168,35 @@ function detectCollisions() {
         if (characters1[i].x > player.x && characters1[i].x < player.x + player.width && characters1[i].y > player.y && characters1[i].y < player.y + player.height) {
             console.log("collision")
             characters1.splice(i, 1);
-
+            player.health -= 100
+            healthbar.innerHTML = `Health: ${player.health}`
+            if (healthbar === 'Health: 0') {
+                alert('Game Over')
+            }
         }
     }
  }
 
+ function Heal() {
+    const restorehlth = document.querySelector('#health')
+    restorehlth.addEventListener('click', (event) => {
+        player.health += 10
+        healthbar.innerHTML = `Health: ${player.health}`
+    })
+ }
+
+ function alerts() {
+     if (healthbar === 0) {
+        console.log("You Lost") 
+        alert("Game Over")
+     }
+ }
+ 
+ Heal()
+animate()
+alerts()
+
+//////////////////////////////////////////////// Other attmepts at different methods////////////////////////////////////
 // function draw() {
 // ctx.draw
 // var x = canvas.width / 2 

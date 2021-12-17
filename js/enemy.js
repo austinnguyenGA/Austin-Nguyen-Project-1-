@@ -9,7 +9,7 @@ canvas.width = 800
 canvas.height = 500
 
 const enemyActions1 = ['up', 'top', 'right', 'right', 'down right', 'down']
-const numberOfEnemies1 = 20
+const numberOfEnemies1 = 10
 const characters1 = [] 
 class enemyOne {
     constructor(){
@@ -138,4 +138,8 @@ function drawSprite1(img, sX, sY, sW, sH, dX, dY, dW, dH){
 //     canvas.width = window.innerWidth
 // })
     
-console.log(characters1)
+//console.log(characters1)
+
+if (characters1.length === 0) {
+    alert("You've Won!")
+}

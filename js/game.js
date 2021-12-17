@@ -1,17 +1,20 @@
+// const startImage = {}
+// startImage.start = new Image()
+// startImage.start.src="image/images.jpeg"
+// const canvas = document.getElementById('startScreen')
+// canvas.width = 800
+// canvas.height = 500
+
+
+
 // const playGame= {
 //    kills: 0, 
-// fight(){
-//     if ( )
-// },
-
+// startingGame() {
+//     const 
+// }
 // }
 
-// function collisions(player, characters1) {
-//     return !( player.x > characters1.x + characters1.width ||
-//             player.x + player.width < characters1.x ||
-//             player.y > characters1.y + characters1.height ||
-//             player.y + player.height < characters1.y)
-// }
+
 
 /// figure out how to check the distance from the enemy when an attack is made and then when they are within a certain distance that will count 
 // as a hit. Have it show up in the console.log() 
@@ -29,3 +32,12 @@
 // ctx.closePath()
 // ctx.fillStyle = "blue"
 // ctx.fill()
+
+// hit boxes
+
+// function collisions(player, characters1) {
+//     return !( player.x > characters1.x + characters1.width ||
+//             player.x + player.width < characters1.x ||
+//             player.y > characters1.y + characters1.height ||
+//             player.y + player.height < characters1.y)
+// }

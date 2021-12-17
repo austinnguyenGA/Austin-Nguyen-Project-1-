@@ -103,14 +103,14 @@ const nomu = new Nomu()
 const akatsuki = new Akatsuki()
 const curse = new Curse()
 
-console.log(tanjiro)
-console.log(deku)
-console.log(kakashi)
-console.log(gojo)
-console.log(damon)
-console.log(nomu)
-console.log(akatsuki)
-console.log(curse)
+// console.log(tanjiro)
+// console.log(deku)
+// console.log(kakashi)
+// console.log(gojo)
+// console.log(damon)
+// console.log(nomu)
+// console.log(akatsuki)
+// console.log(curse)
 
 
 const characterSelection = {
